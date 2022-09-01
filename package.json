@@ -1,0 +1,19 @@
+{
+  "name": "favs-backend",
+  "version": "1.0.0",
+  "description": "We aim to provide a bettwe way to organize your favorite things: music, clothes, courses, etc., all in one place.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Feelgood3/backend-assessment.git"
+  },
+  "author": "FeelgoodV3",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Feelgood3/backend-assessment/issues"
+  },
+  "homepage": "https://github.com/Feelgood3/backend-assessment#readme"
+}
