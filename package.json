@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/Feelgood3/backend-assessment/issues"
   },
-  "homepage": "https://github.com/Feelgood3/backend-assessment#readme"
+  "homepage": "https://github.com/Feelgood3/backend-assessment#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.5.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
 }
