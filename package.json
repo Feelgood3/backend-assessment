@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Feelgood3/backend-assessment#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.0.2",
     "express": "^4.18.1",
     "express-bearer-token": "^2.4.0",
