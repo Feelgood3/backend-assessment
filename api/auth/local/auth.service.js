@@ -4,7 +4,7 @@ const { findUserByEmail } = require('../../user/user.service');
 const signToken = (payload) => {
   const token = jwt.sign(
     payload,
-    'SUP3RL04DF4VS',
+    process.env.TOKEN,
     { expiresIn: '1h' },
   );
   return token;
@@ -12,7 +12,7 @@ const signToken = (payload) => {
 
 const verifyToken = async (token) => {
   try {
-    const payload = await jwt.verify(token, 'SUP3RL04DF4VS');
+    const payload = await jwt.verify(token, process.env.TOKEN);
     return payload;
   } catch (error) {
     return null;
