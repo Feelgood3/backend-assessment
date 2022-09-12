@@ -12,7 +12,8 @@ const UserSchema = new mongoose.Schema({
   },
   favLists:[
     {
-      type: mongoose.Schema.Types.ObjectId, ref: 'Favs'
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Favs'
     }
   ],
   isAuthenticated: {

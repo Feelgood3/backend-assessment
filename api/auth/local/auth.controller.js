@@ -8,8 +8,12 @@ const {
   findOneUser,
 } = require('../../user/user.service');
 
-const loginUserHandler = async (req, res, next) => {
+const loginUserHandler = async (req, res) => {
   const { email, password } = req.body
+
+  if (!email || !password) {
+    return res.status(404).json({ message: 'One or more fields are missing' })
+  }
 
   const user = await findUserByEmail(email)
 
