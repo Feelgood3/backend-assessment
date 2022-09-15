@@ -67,4 +67,11 @@ docid=1020&hl=en = Query strings (This contains additional information for the s
 #day1 = Fragment (Internal location inside a document)
 
 Define what is a Web API, Restful and what are the statusCode 200-, 400-, 500-
+
+Web API: set of definitions and protocols to build and API. It is meant to be built to work using internet. Even though a web API can be REST, it may use other technologies instead, and does not rely exclusively on JSON responses, as it can receive XML as well. 
+
+Rest API: It's an API that must adjust to the REST architecture, which stands for representational state transfer, an approach to communications between web services. When a client makes a request to a Restful, it has to be made using the HTTP protocol. (GET, POST, PUT, DELETE).
+
 When we talk about CRUD, what does it mean?
+
+CRUD stands for Create, Read, Update, and Delete. These are the standard database commands for REST. It may be considered a cycle instead of a system, as most applications may require using all of the commands within it.
