@@ -28,7 +28,7 @@ function addFavsListToUser(id, favListId) {
   return User.findByIdAndUpdate(
     id,
     { $push: { favLists: favListId } },
-    { new: true }
+    { new: true },
   );
 }
 
@@ -36,7 +36,7 @@ function deleteFavsListInUser(id, favListId) {
   return User.findByIdAndUpdate(
     id,
     { $pull: { favLists: favListId } },
-    { multi: true }
+    { multi: true },
   );
 }
 

@@ -67,7 +67,7 @@ const deleteFavsHandler = async (req, res) => {
     }
     await deleteFavsAtFavsList(id, fav.favsList);
     await deleteSingleFavs(id);
-    console.log(`Fav ${id} eliminated`);
+    console.log(`Favs with id: ${id} deleted`);
     return res.json({ message: 'Favs item deleted successfully' });
   } catch (error) {
     return res.status(500).json({ error: 'Unable to delete Favs' });
