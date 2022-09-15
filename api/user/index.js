@@ -1,19 +1,18 @@
 /**
  * User API
  */
- const express = require('express');
- const { Router } = express;
+const express = require('express');
 
- const {
-   getSingleUserHandler,
-   findUserByEmailHandler,
-   registerUserHandler,
+const { Router } = express;
 
- } = require('./user.controller.js')
+const {
+  getSingleUserHandler,
+  findUserByEmailHandler,
 
- const router = Router();
+} = require('./user.controller');
 
- router.get('/', findUserByEmailHandler);
- router.get('/:id', getSingleUserHandler)
- router.post('/:id', registerUserHandler)
- module.exports = router;
+const router = Router();
+
+router.get('/', findUserByEmailHandler);
+router.get('/:id', getSingleUserHandler);
+module.exports = router;

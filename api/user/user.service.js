@@ -24,6 +24,22 @@ function deleteUser(id) {
   return User.findByIdAndRemove(id);
 }
 
+function addFavsListToUser(id, favListId) {
+  return User.findByIdAndUpdate(
+    id,
+    { $push: { favLists: favListId } },
+    { new: true }
+  );
+}
+
+function deleteFavsListInUser(id, favListId) {
+  return User.findByIdAndUpdate(
+    id,
+    { $pull: { favLists: favListId } },
+    { multi: true }
+  );
+}
+
 module.exports = {
   getAllUsers,
   getSingleUser,
@@ -31,4 +47,6 @@ module.exports = {
   findUserByEmail,
   registerUser,
   deleteUser,
+  addFavsListToUser,
+  deleteFavsListInUser,
 };

@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
-const { findUserByEmail } = require('../../user/user.service');
+
+const { findUserByEmail } = require('../../api/user/user.service');
 
 const signToken = (payload) => {
   const token = jwt.sign(
@@ -8,7 +9,7 @@ const signToken = (payload) => {
     { expiresIn: '1h' },
   );
   return token;
-}
+};
 
 const verifyToken = async (token) => {
   try {
@@ -17,13 +18,13 @@ const verifyToken = async (token) => {
   } catch (error) {
     return null;
   }
-}
+};
 
 async function isAuthenticated(req, res, next) {
   const authHeader = req.headers?.authorization;
 
   if (!authHeader) {
-    return res.status(401).json({ message: 'Token was not found'});
+    return res.status(401).json({ message: 'Token was not found' });
   }
 
   const token = authHeader.split(' ')[1];
@@ -32,7 +33,7 @@ async function isAuthenticated(req, res, next) {
   const decoded = await verifyToken(token);
 
   if (!decoded) {
-   return res.status(401).json({ message: 'Unauthorized' });
+    return res.status(401).json({ message: 'Unauthorized' });
   }
 
   // This adds a user to request
@@ -40,11 +41,11 @@ async function isAuthenticated(req, res, next) {
   const user = await findUserByEmail(email);
 
   if (!user) {
-    return res.status(404).json({ message: 'User not found'});
+    return res.status(404).json({ message: 'User not found' });
   }
 
   req.user = user;
-  req.json({success: 'Authorized token'})
+  req.json({ success: 'Authorized token' });
 
   next();
   return true;
