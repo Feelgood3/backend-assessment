@@ -67,6 +67,7 @@ const deleteFavsHandler = async (req, res) => {
     }
     await deleteFavsAtFavsList(id, fav.favsList);
     await deleteSingleFavs(id);
+    // eslint-disable-next-line no-console
     console.log(`Favs with id: ${id} deleted`);
     return res.json({ message: 'Favs item deleted successfully' });
   } catch (error) {

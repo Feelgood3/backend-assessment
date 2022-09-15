@@ -6,7 +6,7 @@ const connectDatabase = require('./config/database');
 
 const app = configExpress();
 
-const { PORT } = process.env.PORT;
+const { PORT } = process.env;
 const NODE_ENV = process.env.NODE_ENV || 'production';
 
 app.listen(PORT, async () => {

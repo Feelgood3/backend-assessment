@@ -3,7 +3,7 @@ const {
   findUserByEmail,
 } = require('./user.service');
 
-export async function getSingleUserHandler(req, res) {
+const getSingleUserHandler = async (req, res) => {
   const { id } = req.params;
   try {
     const user = await getSingleUser(id);
@@ -16,9 +16,9 @@ export async function getSingleUserHandler(req, res) {
   } catch (error) {
     return res.status(500).json({ error });
   }
-}
+};
 
-export async function findUserByEmailHandler(req, res) {
+const findUserByEmailHandler = async (req, res) => {
   const { email } = req.body;
 
   try {
@@ -31,4 +31,9 @@ export async function findUserByEmailHandler(req, res) {
   } catch (error) {
     return res.status(500).json({ error: 'There was an error' });
   }
-}
+};
+
+module.exports = {
+  getSingleUserHandler,
+  findUserByEmailHandler,
+};
