@@ -3,6 +3,7 @@ require('dotenv').config();
 const configExpress = require('./config/express');
 const routesConfig = require('./routes');
 const connectDatabase = require('./config/database');
+const swagger = require('./config/swagger');
 
 const app = configExpress();
 
@@ -15,6 +16,9 @@ app.listen(PORT, async () => {
 
   // Connect to database
   await connectDatabase();
+
+  // Enable Swagger
+  swagger(app, PORT);
 
   // Configure routes
   routesConfig(app);

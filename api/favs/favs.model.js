@@ -13,6 +13,16 @@ const SingleFavsSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  favsList: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'FavsList',
+    required: true,
+  },
+  owner: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true,
+  },
 }, { timestamps: true });
 
 const FavsListsSchema = new mongoose.Schema({
@@ -21,8 +31,13 @@ const FavsListsSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
-  favsItem: [SingleFavsSchema],
-  user: {
+  favsItem: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Favs',
+    },
+  ],
+  owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
     require: true,
